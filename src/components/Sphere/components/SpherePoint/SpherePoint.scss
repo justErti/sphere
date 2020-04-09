@@ -1,0 +1,48 @@
+.sphere__point {
+  position: absolute;
+  list-style-type: none;
+  top: calc(50% - 3px);
+  left: calc(50% - 3px);
+  transform-style:  preserve-3d;
+
+  &.sphere__point__filled {
+    .sphere__point__border {
+      background: #000;
+    }
+  }
+}
+
+.sphere__point__border {
+  position: relative;
+  display: block;
+  width: 6px;
+  height: 6px;
+  border: 1px solid;
+  border-radius: 50%;
+  animation: pointRotate 20s linear infinite;
+}
+
+.sphere__point__title {
+  color: #000;
+  text-decoration: none;
+  position: absolute;
+  border: 1px solid;
+  bottom: calc(100% + 5px);
+  left: 2px;
+  transform: translate(-50%);
+  z-index: 1000;
+  background: #fff;
+  cursor: pointer;
+  padding: 3px 8px;
+  border-radius: 8px;
+}
+
+
+@keyframes pointRotate {
+  from {
+    transform: rotateY(360deg);
+  }
+  to {
+    transform: rotateY(0deg);
+  }
+}
